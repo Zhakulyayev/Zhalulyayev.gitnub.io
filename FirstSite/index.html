@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnMj8Xc5_jA0tqVHCoFHCk-2sHt4imItA&callback=initMap&libraries=&v=weekly" defer ></script>
+  <title>RealtyUp.com</title>
+</head>
+
+<body>
+
+  <div class="nav">
+    <label for="toggle">&#9776</label>   
+  </div>
+
+  <input type="checkbox" name="" id="toggle">
+
+  <div class="header">
+    <img class="headerLogo" src="img/RealUpLogo.png" alt="" width="60px" height="65px" >
+    <a href="#" class="header_text">Market</a>
+    <a href="#" class="header_text">Our services</a>
+    <a href="#" class="header_text">Рelpful</a>
+    <a href="#" class="header_text">About us</a>
+    <a href="#" class="header_text">Contacts</a>
+    <a href="#" class="header_text" id="signUp" onclick="openLogin()">Sign Up</a>
+  </div>
+
+  <div class="search">
+
+    <H1 class="search_text">Find your home on the RealUp.com</H1>
+
+    <div class="user_profile">
+      <img id="profile_img" src="img/avarat.png" alt="">
+      <p id="user_name">Jhon</p>
+    </div>
+
+    <div class="oparation">
+      <a href="#" id="opt" class="oparation_text">Buy</a>
+      <a href="#" id="opt1" class="oparation_text">Mortgage<a>
+      <a href="#" id="opt2" class="oparation_text">Estimate</a>
+    </div>
+
+    <div class="performance">
+      <div class="selection">
+       <div class="selection-text" >Secondary</div>
+       <div class="selection-text" >New Buildings</div>
+       <div class="selection-text" >Commercial</div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="from-box">
+
+        <img class="closed" onclick="closeLogin()" src="img/Close.webp" alt="" width="6%">
+
+        <div class="botton-box">
+          <div id="btn"></div>
+          <button type="button"  class="toggle-btn" onclick="login()">Log In</button>
+          <button type="button"  class="toggle-btn" onclick="register()">Register</button>
+        </div>
+
+        <div class="sosial-icons">
+          <img src="img/fb.png" alt="">
+          <img src="img/tw.png" alt="">
+          <img src="img/gl.png" alt="">
+        </div>
+
+        <form id="login" class="input-group">
+          <input type="text" id="userName" class="input-field" placeholder="User Id" required>
+          <input type="text" class="input-field" placeholder="Enter Password" required>
+          <input type="checkbox" class="check-box" ><span>Remember Password</span>
+          <button type="submit" id="btnLogIn" class="submit-btn" onclick="logIn(userName.value)">Join</button>
+        </form>
+
+        <form id="register" class="input-group">
+          <input type="text" id="userName" class="input-field" placeholder="User Id" required>
+          <input type="email" class="input-field" placeholder="Email Id" required>
+          <input type="text" class="input-field" placeholder="Enter Password" required>
+          <input type="checkbox" class="check-box" ><span>I agree to the terms & conditions</span>
+          <button type="submit" class="submit-btn" onclick="logIn(userName.value)">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="сelections">
+
+      <div class="сelectionsTitle">Buy your new Home</div>
+
+      <hr id="celectionsHr">
+
+      <div class="celectionsWarp">
+
+        <div id="cC1" class="сelectionsCard">
+          <img class="celectionsImg" src="img/home/Home1/Home1.1.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$120K</p>
+          <p id="сelectionsPPlace">Seifulina/506</p>
+        </div>
+
+        <div class="сelectionsCard">
+          <img class="celectionsImg" src="img/home/Home2/Home2.1.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$88K</p>
+          <p id="сelectionsPPlace">Lugansko/70</p>
+        </div>
+   
+        <div class="сelectionsCard">
+          <img class="celectionsImg" src="img/home/Home3/Home3.1.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$146K</p>
+          <p id="сelectionsPPlace">Dostik/89</p>
+        </div>
+   
+        <div class="сelectionsCard">
+          <img class="celectionsImg" src="img/home/Home4/Home4.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$95K</p>
+          <p id="сelectionsPPlace">Abylaihan/95</p>
+        </div>
+   
+        <div class="сelectionsCard">
+          <img class="celectionsImg" onclick="mouse" src="img/home/Home5/Home5.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$117K</p>
+          <p id="сelectionsPPlace">Bostandik/46</p>
+        </div>
+   
+        <div class="сelectionsCard">
+          <img class="celectionsImg" src="img/home/Home6/Home6.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$209K</p>
+          <p id="сelectionsPPlace">Dostik/309</p>
+        </div>
+   
+        <div class="сelectionsCard">
+          <img class="celectionsImg" src="img/home/Home7/Home7.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$75K</p>
+          <p id="сelectionsPPlace">ToleBi/79</p>
+        </div>
+   
+        <div class="сelectionsCard">
+          <img class="celectionsImg" src="img/home/Home8/Home8.jpg" alt="">
+          <p id="сelectionsPName">Big Home</p>
+          <p id="сelectionsPCost">$91K</p>
+          <p id="сelectionsPPlace">Medey/7</p>
+        </div>
+          
+      </div>        
+        
+    </div>
+
+    </div>
+
+    <hr id="mapHr">
+
+    <div class="maps">
+      <div id="map"></div>
+      <div class="mapTitle">
+        <p id="mapP">You can find us <hr id="mapHrTitle"> at this address or on the map</p>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+
+  </div>
+
+</body>
+
+</html>
